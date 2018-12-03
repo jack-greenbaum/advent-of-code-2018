@@ -19,4 +19,4 @@ for (cid, xcord, ycord, width, height) in plans:
             spaces[(i,j)].append(cid)
 
 print ('Part 1: {0}'.format(len([k for k in spaces if len(spaces[k]) > 1]))) # Answer: 113576
-print ('Part 2: {0}'.format([x for x in overlaps if len(overlaps[x]) == 0][0])) #Anser: 825
+print ('Part 2: {0}'.format([x for x in overlaps if len(overlaps[x]) == 0][0])) #Answer: 825
