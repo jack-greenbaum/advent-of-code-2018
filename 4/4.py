@@ -30,5 +30,6 @@ file = open('guards.txt', 'r')
 timestamps = file.read().splitlines()
 sorted_times = sorted(map(lambda s: re.findall(r'\d+|(?![shift])[A-Za-z]+$', s), timestamps), key = lambda x: (x[1], x[2], x[3], x[4]))
 calc_sleep_times(sorted_times)
+
 # Part A: 11367
 # Part B: 1153
