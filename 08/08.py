@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 class Node:
     @property
     def face_value(self):
@@ -38,8 +40,9 @@ def build_tree(license_list):
             nodes.append(new_node)
     return root
 
-file = open('./license.txt')
-license_list = [int(num) for num in file.read().split(' ')]
-root = build_tree(license_list)
-print('Part A: {}'.format(root.face_value))
-print('Part B: {}'.format(root.full_value))
+if __name__ == "__main__":
+    file = open('./input.txt')
+    license_list = [int(num) for num in file.read().split(' ')]
+    root = build_tree(license_list)
+    print('Part A: {}'.format(root.face_value))
+    print('Part B: {}'.format(root.full_value))

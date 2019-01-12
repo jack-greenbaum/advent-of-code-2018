@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 from itertools import cycle
 
 class Player:
@@ -46,9 +48,8 @@ def play(num_players, marbles):
             current_player.score += marble + removed_marble
     return max([player.score for player in players])
 
-
-
-description = open('./description.txt').read().split(' ')
-num_players, num_marbles = int(description[0]), int(description[6])
-print('Part A: {}'.format(play(num_players, [x + 1 for x in range(num_marbles)])))
-print('Part B: {}'.format(play(num_players, [x + 1 for x in range(num_marbles * 100)])))
+if __name__ == "__main__":
+    description = open('./input.txt').read().split(' ')
+    num_players, num_marbles = int(description[0]), int(description[6])
+    print('Part A: {}'.format(play(num_players, [x + 1 for x in range(num_marbles)])))
+    print('Part B: {}'.format(play(num_players, [x + 1 for x in range(num_marbles * 100)])))

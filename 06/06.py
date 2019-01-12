@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 from collections import defaultdict
 
 def manhattan_distance(first, second):
@@ -37,6 +39,7 @@ def largest_finite_area(points):
     print('Part A: {}'.format(max(counts.values())))
     print('Part B: {}'.format(len(region)))
 
-file = open('coordinates.txt', 'r')
-points = list(map(lambda x: (int(x[0]), int(x[1])), [line.split(', ') for line in file.read().splitlines()]))
-print(largest_finite_area(points))
+if __name__ == "__main__":
+    file = open('input.txt', 'r')
+    points = list(map(lambda x: (int(x[0]), int(x[1])), [line.split(', ') for line in file.read().splitlines()]))
+    print(largest_finite_area(points))

@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 from string import ascii_uppercase
 
 class Worker:
@@ -64,15 +66,16 @@ def fiveWorkers(dependencies):
     print('Part B: {}'.format(seconds - 1))
     #Part B: 1040
 
-file = open('./steps.txt', 'r').read().splitlines()
-steps = [tuple((line.split(' ')[1], line.split(' ')[7])) for line in file]
-dependencies = {}
+if __name__ == "__main__":
+    file = open('./input.txt', 'r').read().splitlines()
+    steps = [tuple((line.split(' ')[1], line.split(' ')[7])) for line in file]
+    dependencies = {}
 
-for letter in ascii_uppercase:
-    dependencies[letter] = set()
+    for letter in ascii_uppercase:
+        dependencies[letter] = set()
 
-for (cause, effect) in steps:
-    dependencies[effect].add(cause)
+    for (cause, effect) in steps:
+        dependencies[effect].add(cause)
 
-# singleWorker(dependencies)
-fiveWorkers(dependencies)
+    # singleWorker(dependencies)
+    fiveWorkers(dependencies)

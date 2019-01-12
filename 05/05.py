@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 from string import ascii_lowercase
 
 def oppositePolarity(first, second):
@@ -12,8 +14,9 @@ def scan(polymer):
             stable.append(letter)
     return len(stable)
 
-file = open('polymer.txt', 'r')
-polymer = file.read()
+if __name__ == "__main__":
+    file = open('input.txt', 'r')
+    polymer = file.read()
 
-print('Part A: {}'.format(scan(polymer)))
-print('Part B: {}'.format(min([scan(polymer.replace(letter, '').replace(letter.upper(), '')) for letter in ascii_lowercase])))
+    print('Part A: {}'.format(scan(polymer)))
+    print('Part B: {}'.format(min([scan(polymer.replace(letter, '').replace(letter.upper(), '')) for letter in ascii_lowercase])))
